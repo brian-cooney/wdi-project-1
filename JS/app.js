@@ -1,1 +1,1 @@
-console.log('hello');
+console.log('app.js is linked, great success!');

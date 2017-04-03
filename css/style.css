@@ -1,3 +1,30 @@
-body {
+/*body {
   background: violet;
+}*/
+
+header {
+  text-align: center;
+}
+
+
+div {
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  margin: 0 auto;
+
+}
+
+.boxPark {
+  background: black;
+  width: 4em;
+  height: 4em;
+  float: left;
+  display: inline;
+  position: relative;
+}
+
+footer {
+  text-align: center;
+
 }

@@ -13,7 +13,7 @@ SUDO CODE
   All images turned to display off, jquery toggles display on randomly.
   Add countdown timer to game
   keep track of the player score
-  
+
 
 */
 
@@ -26,6 +26,7 @@ const images = [
 
 ];
 let playerScore = 0;
+let levelSpeed =
 // let gameLevel = 0;
 // let startGame = false;
 // let gameInterval;
@@ -49,6 +50,7 @@ function chooseSquare() {
 
 function start() {
   gameInterval = setInterval(displayRandomPhotos, 1500);
+  gameTimer();
 }
 
 function displayRandomPhotos() {
@@ -81,11 +83,10 @@ function gameTimer() {
     setTime--;
     if(setTime === 0){
       clearInterval(liveCount);
+      clearInterval(gameInterval);
 
     }
     $('.screen').text('Time remaining: ' + setTime);
     console.log(setTime);
   }
 }
-
-gameTimer();

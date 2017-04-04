@@ -1,29 +1,46 @@
+body {
+  background: none;
+}
+
 header {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
+  background-color: #efefef;
+  padding: 20px;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
 }
 
 #gameBoard {
-  width: 440px;
-  height: 440px;
+  /*background-color: #efefef;*/
+  width: 360px;
+  height: 360px;
   margin: 0 auto;
-  border: 2px solid grey;
 }
 
 
 .photo {
-  background: grey;
-  width: 100px;
-  height: 100px;
+  background: #caebf2;
+  border-radius: 100%;
+  width: 70px;
+  height: 70px;
   float: left;
-  margin: 5px 5px 5px 5px;
+  margin: 10px;
 }
 
 .person {
-  background-size: cover;
+
 }
 
 footer {
-  margin-top: 10px;
+  height: 200px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+  background-color: #efefef;
+  clear: both;
   text-align: center;
 }
 
@@ -32,4 +49,8 @@ footer {
   height: 20px;
   border: 2px solid black;
   margin: 0 auto;
+}
+
+.start {
+  margin-top: 20px;
 }

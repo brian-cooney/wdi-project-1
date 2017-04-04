@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>WDI Project 1</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="websitewaters-island01-stage03/css/normalize.css" type="text/css" media="scren">
   <link rel="stylesheet" href="css/style.css">
@@ -13,10 +14,20 @@
 
 </head>
 <body>
-  <header>
+  <div class="headerDiv">
     <h1>#HEX PARTY</h1>
     <h2>Hit as many #hex codes before the clock ends</h2>
-  </header>
+
+  </div>
+  <div class="controls">
+    <div class="start"><p class="startP">START</p></div>
+    <div class="screen"></div>
+    <p class="score">player score</p>
+    <input type="radio" class"easy" name="" value="">Easy
+    <input type="radio" class"medium" name="" value="">Medium
+    <input type="radio" class"hard" name="" value="">Hard
+
+  </div>
 
   <main id="gameBoard">
     <div class="photo"></div>
@@ -36,17 +47,5 @@
     <div class="photo"></div>
     <div class="photo"></div>
   </main>
-
-  <footer>
-    <div class="screen"></div>
-    <p class="score">player score
-
-    </p>
-    <input type="radio" class"easy" name="" value="">Easy
-    <input type="radio" class"medium" name="" value="">Medium
-    <input type="radio" class"hard" name="" value="">Hard <br>
-    <button type="button" class="start" name="button">Start Game</button>
-  </footer>
-
 </body>
 </html>

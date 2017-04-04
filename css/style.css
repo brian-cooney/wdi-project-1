@@ -2,13 +2,28 @@ body {
   background: none;
 }
 
-header {
+.headerDiv {
+  margin: 0 auto;
+  width: 360px;
+  height: 100px;
   font-size: 15px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Bungee Shade', cursive;
   text-align: center;
-  background-color: #efefef;
-  padding: 20px;
+  opacity: 1.0;
+
+
 }
+
+.controls {
+  margin: 0 auto;
+  width: 360px;
+  height: 100px;
+  /*border: 1px solid grey;*/
+  margin-top: 20px;
+  background-color: #efefef;
+  padding: 10px;
+}
+
 h2 {
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
@@ -19,8 +34,10 @@ h2 {
   width: 360px;
   height: 360px;
   margin: 0 auto;
+  /*border: 1px solid grey;*/
+  background-color: #efefef;
+  padding: 10px;
 }
-
 
 .photo {
   background: #caebf2;
@@ -35,22 +52,28 @@ h2 {
 
 }
 
-footer {
-  height: 200px;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 20px;
-  background-color: #efefef;
-  clear: both;
-  text-align: center;
-}
-
 .timer {
   width: 200px;
   height: 20px;
   border: 2px solid black;
   margin: 0 auto;
+  float: left;
 }
 
 .start {
-  margin-top: 20px;
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+  background-color: red;
+  vertical-align:middle;
+  float: right;
+
+}
+.startP{
+  text-align: center;
+  padding-top: 25px;
+  font-family: 'Bungee Shade', cursive;
+  font-size: 12px;
+
 }

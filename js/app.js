@@ -13,18 +13,9 @@ SUDO CODE
   keep track of the player score
 */
 
-const images = [
-  'http://fillmurray.com/140/100',
-  'http://fillmurray.com/140/101',
-  'http://fillmurray.com/140/102',
-  'http://fillmurray.com/140/103',
-  'http://fillmurray.com/140/104'
-];
+
 let playerScore = 0;
 let levelSpeed;
-// let gameLevel = 0;
-// let startGame = false;
-// let gameInterval;
 
 $(init);
 
@@ -34,7 +25,6 @@ function init() {
 }
 
 function chooseSquare() {
-  console.log('clicked');
   if ($(this).hasClass('person')) {
     const buttonColor = $(this).css('background');
 
@@ -49,7 +39,9 @@ function chooseSquare() {
 
 function start() {
   if ($('.easy').on('click')) {
-    levelSpeed = 1000;
+    levelSpeed = 1500;
+  } else {
+    levelSpeed = 500;
   }
   gameInterval = setInterval(displayRandomPhotos, levelSpeed);
   gameTimer();
@@ -88,7 +80,6 @@ function gameTimer() {
     if(setTime === 0){
       clearInterval(liveCount);
       clearInterval(gameInterval);
-
     }
     $('.screen').text('Time remaining: ' + setTime);
     console.log(setTime);

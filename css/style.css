@@ -10,18 +10,15 @@ body {
   font-family: 'Bungee Shade', cursive;
   text-align: center;
   opacity: 1.0;
-
-
 }
 
 .controls {
   margin: 0 auto;
   width: 360px;
   height: 100px;
-  /*border: 1px solid grey;*/
-  margin-top: 20px;
   background-color: #efefef;
   padding: 10px;
+  border-radius: 20px;
 }
 
 h2 {
@@ -37,6 +34,8 @@ h2 {
   /*border: 1px solid grey;*/
   background-color: #efefef;
   padding: 10px;
+  border-radius: 20px;
+  margin-top: 20px;
 }
 
 .photo {
@@ -75,5 +74,20 @@ h2 {
   padding-top: 25px;
   font-family: 'Bungee Shade', cursive;
   font-size: 12px;
+}
+.score {
+  font-family: 'Roboto', sans-serif;
+}
 
+.easy {
+  font-family: 'Roboto', sans-serif;
+  display: inline;
+}
+
+.hard {
+  font-family: 'Roboto', sans-serif;
+  display: inline;
+}
+.screen {
+  font-family: 'Roboto', sans-serif;
 }

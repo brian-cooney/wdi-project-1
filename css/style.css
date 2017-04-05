@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
   width: 360px;
   height: 100px;
-  font-size: 15px;
+  font-size: 19px;
   font-family: 'Bungee Shade', cursive;
   text-align: center;
   opacity: 1.0;
@@ -23,7 +23,7 @@ body {
 
 h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #gameBoard {
@@ -60,33 +60,50 @@ h2 {
 }
 
 .start {
+  font-family: 'Bungee Shade', cursive;
   margin: 0 auto;
   width: 70px;
   height: 70px;
   border-radius: 100%;
   background-color: red;
-  vertical-align:middle;
-  float: right;
-
-}
-.startP{
   text-align: center;
-  padding-top: 25px;
-  font-family: 'Bungee Shade', cursive;
-  font-size: 12px;
+  vertical-align: middle;
+  line-height: 70px;
+  float: right;
 }
+
+
 .score {
   font-family: 'Roboto', sans-serif;
 }
 
 .easy {
   font-family: 'Roboto', sans-serif;
-  display: inline;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  border-radius: 100%;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
+
+
 }
 
 .hard {
   font-family: 'Roboto', sans-serif;
-  display: inline;
+  width: 35px;
+  height: 35px;
+  background-color: red;
+  border-radius: 100%;
+  float: left;
+  font-size: 12px;
+  margin-left: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
 }
 .screen {
   font-family: 'Roboto', sans-serif;

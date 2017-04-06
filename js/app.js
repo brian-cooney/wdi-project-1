@@ -20,10 +20,10 @@ $(init);
 
 function init() {
   levelSpeed = 2000;
-  $('.easy').addClass('toggleButton');
-  $('.hard').removeClass('toggleButton');
+  // $('.easy').addClass('toggleButton');
+  // $('.hard').removeClass('toggleButton');
   $('.hexRandom').on('click', chooseSquare);
-  $('.start').on('click', start);
+  $('.start').one('click', chooseDifficulty);
   $('.easy').on('click', setGameLevel);
   $('.hard').on('click', setGameLevel);
   $('.reset').on('click', resetGame);
@@ -33,29 +33,54 @@ function chooseSquare() {
   if ($(this).hasClass('hexColor')) {
     const buttonColor = $(this).css('background');
     $('body').css('background', buttonColor);
+    $('h1, h2').css('color', '#fff');
     console.log('hit');
     playerScore++;
-    $('.scoreButton').html(playerScore);
+    $('.score span').html(playerScore);
   }
 }
 
 function setGameLevel() {
+  // if ($(this).hasClass('easy')) {
+  //   $(this).toggleClass('selected');
+  //   if ($(this).hasClass('selected')) {
+  //     $('.hard').toggleClass('selected');
+  //   }
+  // }
+
+
+
+
+  // if ($(this).hasClass('selected')) {
+  //   levelSpeed = $(this).attr('id');
+  //   console.log(levelSpeed);
+  // }
+
   if ($(this).hasClass('easy')) {
-    $(this).toggleClass('toggleButton');
-    if ($('.hard').hasClass('toggleButton')) {
-      $('.hard').toggleClass('toggleButton');
+    $(this).toggleClass('selected');
+    if ($('.hard').hasClass('selected')) {
+      $('.hard').toggleClass('selected');
     }
     levelSpeed = 2000;
   } else {
-    $(this).toggleClass('toggleButton');
-    if ($('.easy').hasClass('toggleButton')) {
-      $('.easy').toggleClass('toggleButton');
+    $(this).toggleClass('selected');
+    if ($('.easy').hasClass('selected')) {
+      $('.easy').toggleClass('selected');
     }
     levelSpeed = 500;
   }
 }
 
-function start() {
+function chooseDifficulty() {
+  $('.difficulty').removeClass('hidden');
+  $('.start').html('Confirm');
+  $('.start').one('click', startGame);
+}
+
+function startGame() {
+  $('.difficulty').addClass('hidden');
+  $('.start').html('Reset');
+  $('.start').one('click', resetGame);
   gameInterval = setInterval(displayRandomColors, levelSpeed);
   gameTimer();
 }
@@ -86,7 +111,7 @@ function gameTimer() {
       clearInterval(liveCount);
       clearInterval(gameInterval);
     }
-    $('.start').text(setTime);
+    $('.timer span').text(setTime);
     console.log(setTime);
   }
 }
@@ -105,11 +130,16 @@ function randomHexValue() {
 }
 
 function resetGame() {
-  console.log('working');
-  var $audio = document.getElementById('audio');
-  $audio.src = 'https://www.soundjay.com/door/doorbell-1.mp3';
-  $audio.play();
+  $('.start').html('Start');
+  $('.start').one('click', chooseDifficulty);
+  // console.log('working');
+  // var $audio = document.getElementById('audio');
+  // $audio.src = 'https://www.soundjay.com/door/doorbell-1.mp3';
+  // $audio.play();
   // clearInterval(liveCount);
   // gameTimer.clear();
   // $('.reset')[0].play();
 }
+
+//reset button should clear functions
+//mobile responsive

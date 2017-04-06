@@ -2,50 +2,58 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>WDI Project 1</title>
-  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,900" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <script src="js/app.js" charset="utf-8"></script>
+  <!-- <script src="js/app.js" charset="utf-8"></script> -->
+  <script src="js/refactor.js" charset="utf-8"></script>
 
 </head>
 <body>
   <div class="headerDiv">
-    <h1>#HEX PARTY</h1>
+    <h1>HEX PARTY</h1>
     <h2>Hit as many <span class="hexMulti">#hex</span> colors before the clock ends</h2>
-
   </div>
-  <div class="controls">
-    <div class="start">Start</div>
-    <div class="scoreButton">Score</div>
-    <div class="screen"></div>
-    <p class="score"></p>
-    <div class="easy">Easy</div>
-    <div class="hard">Hard</div>
-    <div class="reset">Reset</div>
-    <!-- <button class="reset" type="button" name="button"></button> -->
-  </div>
-
-  <main id="gameBoard">
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
-    <div class="hexRandom"></div>
+  <main>
+    <div class="difficulty hidden">
+      <div class="easy selected" id="2000">Easy</div>
+      <div class="hard" id="500">Hard</div>
+    </div>
+    <div class="controls">
+      <div class="start">Start</div>
+      <div class="score">Score <span>0</span></div>
+      <!-- <div class="difficulty"> -->
+        <!-- <div class="easy">Easy</div> -->
+        <!-- <div class="hard">Hard</div> -->
+      <!-- </div> -->
+      <!-- <div class="scoreButton">Score</div> -->
+      <div class="screen"></div>
+      <div class="timer">Timer <span>10</span></div>
+    </div>
+    <div id="gameBoard">
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+      <div class="hexRandom"></div>
+    </div>
   </main>
 
 <audio id="audio"></audio>

@@ -1,5 +1,16 @@
 body {
-  background: none;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  background-color: #fafafa;
+  transition: background 0.5s;
+}
+
+main {
+  position: relative;
+  background: #efefef;
+  width: 380px;
+  margin: 0 auto;
+  border-radius: 5px;
 }
 
 .headerDiv {
@@ -7,7 +18,6 @@ body {
   width: 360px;
   height: 100px;
   font-size: 21px;
-  font-family: 'Bungee Shade', cursive;
   text-align: center;
   opacity: 1.0;
 }
@@ -15,34 +25,37 @@ body {
 .controls {
   margin: 0 auto;
   width: 360px;
-  height: 90px;
+  height: 30px;
   background-color: #efefef;
-  padding: 10px;
-  border-radius: 20px;
-  margin-top: 10px;
+}
+
+h1, h2 {
+  transition: color 0.5s;
+}
+
+h1 {
+  font-size: 65px;
+  letter-spacing: -4px;
 }
 
 h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 16px;
-  padding-bottom: 10px;
+  font-size: 15px;
+  margin-top: -55px;
 }
 
 #gameBoard {
-  /*background-color: #efefef;*/
   width: 360px;
   height: 360px;
   margin: 0 auto;
-  /*border: 1px solid grey;*/
-  background-color: #efefef;
+  background-color: #ccc;
   padding: 10px;
-  border-radius: 20px;
   margin-top: 20px;
+  border-radius: 0 0 5px 5px;
 }
 
 .hexRandom {
-  background: #caebf2;
-  border-radius: 100%;
+  background: #f2f2f2;
+  border-radius: 5px;
   width: 70px;
   height: 70px;
   float: left;
@@ -52,97 +65,78 @@ h2 {
 .hexColor {
 }
 
-.timer {
+/*.timer {
   width: 200px;
   height: 20px;
   border: 2px solid black;
   margin: 0 auto;
   float: left;
-}
+}*/
 
 .start {
-  font-family: 'Bungee Shade', cursive;
-  margin: 0 auto;
+  /*margin: 0 auto;
   width: 70px;
   height: 70px;
-  border-radius: 100%;
+  border-radius: 5px;
   background-color: #ff3b3f;
   text-align: center;
   vertical-align: middle;
   line-height: 70px;
   float: right;
-  margin: 10px;
+  margin: 10px;*/
 }
 
-.scoreButton {
-  font-family: 'Bungee Shade', cursive;
+.start, .timer, .score {
+  width: 116px;
+  text-align: center;
+  font-weight: 900;
+}
+
+.start {
+  cursor: pointer;
+}
+
+.controls div {
+  display: inline-block;
+  line-height: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.difficulty {
   margin: 0 auto;
-  width: 70px;
-  height: 70px;
-  border-radius: 100%;
-  background-color: #ff3b3f;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 70px;
+  position: absolute;
+  z-index: 2;
+  width: 360px;
+  height: 360px;
+  top: 60px;
+  left: 10px;
+  color: #fff;
+}
+
+.difficulty div {
   float: left;
-  margin: 10px;
-}
-
-.score {
-  font-family: 'Roboto', sans-serif;
-}
-
-.easy {
-  font-family: 'Roboto', sans-serif;
-  width: 35px;
-  height: 35px;
-  background-color: #ff3b3f;
-  border-radius: 100%;
-  float: left;
-  font-size: 12px;
   text-align: center;
-  vertical-align: middle;
-  line-height: 35px;
-  margin-left: 26px;
-  margin-top: 30px;
+  line-height: 360px;
+  width: 50%;
+  transition: font-size 1s;
+  cursor: pointer;
 }
 
-.hard {
-  font-family: 'Roboto', sans-serif;
-  width: 35px;
-  height: 35px;
-  background-color: #ff3b3f;
-  border-radius: 100%;
-  float: left;
-  font-size: 12px;
-  margin-left: 10px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 35px;
-  margin-top:  30px;
-}
-.screen {
-  font-family: 'Roboto', sans-serif;
+.selected {
+  font-size: 40px;
 }
 
-.toggleButton {
-  background: yellow;
+.difficulty .easy {
+  background: #2D4CB4;
+  border-radius: 5px 0 0 5px;
 }
 
-.reset {
-  font-family: 'Roboto', sans-serif;
-  width: 35px;
-  height: 35px;
-  background-color: #ff3b3f;
-  border-radius: 100%;
-  float: left;
-  font-size: 12px;
-  text-align: center;
-  /* vertical-align: middle; */
-  line-height: 35px;
-  /* margin-left: 45px; */
-  margin-top: 30px;
-  margin-left: 10px;
+.difficulty .hard {
+  background: #FF2626;
+  border-radius: 0 5px  5px 0;
 }
 
 /*change colour of h2 span text #hex */

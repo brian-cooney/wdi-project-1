@@ -6,7 +6,7 @@ body {
   margin: 0 auto;
   width: 360px;
   height: 100px;
-  font-size: 19px;
+  font-size: 21px;
   font-family: 'Bungee Shade', cursive;
   text-align: center;
   opacity: 1.0;
@@ -19,11 +19,13 @@ body {
   background-color: #efefef;
   padding: 10px;
   border-radius: 20px;
+  margin-top: 10px;
 }
 
 h2 {
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
+  padding-bottom: 10px;
 }
 
 #gameBoard {
@@ -38,7 +40,7 @@ h2 {
   margin-top: 20px;
 }
 
-.photo {
+.hexRandom {
   background: #caebf2;
   border-radius: 100%;
   width: 70px;
@@ -141,4 +143,10 @@ h2 {
   /* margin-left: 45px; */
   margin-top: 30px;
   margin-left: 10px;
+}
+
+/*change colour of h2 span text #hex */
+.hexMulti {
+  color: #ff3b3f;
+  font-weight: bold;
 }

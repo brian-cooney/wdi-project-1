@@ -1,16 +1,16 @@
 /*
 WHACK A MOLE STYLE GAME USING randomly generated #hex values - Version 1
-  Using photos of the WDI class as objects to click on a grid.
-  The player has a set amount of time to click as many objects as possible
-  score is recored for each round
-  Speed of game play increases as the rounds progress.
+Using photos of the WDI class as objects to click on a grid.
+The player has a set amount of time to click as many objects as possible
+score is recored for each round
+Speed of game play increases as the rounds progress.
 
 SUDO CODE
-  Get photos to randomly appear on the grid.
-  The photos should disappear when clicked.
-  All images turned to display off, jquery toggles display on randomly.
-  Add countdown timer to game
-  keep track of the player score
+Get photos to randomly appear on the grid.
+The photos should disappear when clicked.
+All images turned to display off, jquery toggles display on randomly.
+Add countdown timer to game
+keep track of the player score
 */
 let playerScore = 0;
 let levelSpeed;
@@ -19,14 +19,14 @@ let gameInterval;
 $(init);
 
 function init() {
-  levelSpeed = 3000;
+  levelSpeed = 2000;
   $('.easy').addClass('toggleButton');
   $('.hard').removeClass('toggleButton');
-
-  $('.photo').on('click', chooseSquare);
+  $('.hexRandom').on('click', chooseSquare);
   $('.start').on('click', start);
   $('.easy').on('click', setGameLevel);
   $('.hard').on('click', setGameLevel);
+  $('.reset').on('click', resetGame);
 }
 
 function chooseSquare() {
@@ -36,7 +36,6 @@ function chooseSquare() {
     console.log('hit');
     playerScore++;
     $('.scoreButton').html(playerScore);
-    // Update the dom
   }
 }
 
@@ -46,7 +45,7 @@ function setGameLevel() {
     if ($('.hard').hasClass('toggleButton')) {
       $('.hard').toggleClass('toggleButton');
     }
-    levelSpeed = 3000;
+    levelSpeed = 2000;
   } else {
     $(this).toggleClass('toggleButton');
     if ($('.easy').hasClass('toggleButton')) {
@@ -63,20 +62,12 @@ function start() {
 
 function displayRandomColors() {
   // Pick a random index out of the index of .photos
-  let randomIndex = Math.floor(Math.random() * $('.photo').length);
-  let randomPhoto = $('.photo')[randomIndex];
+  let randomIndex = Math.floor(Math.random() * $('.hexRandom').length);
+  let randomColour = $('.hexRandom')[randomIndex];
   // // Turn into a jQuery object
-  let $random     = $(randomPhoto);
-  // while ($random.hasClass('person')) {
-  //   randomIndex = Math.floor(Math.random() * $('.photo').length);
-  //   randomPhoto = $('.photo')[randomIndex];
-  //   $random     = $(randomPhoto);
-  // }
-  $random.addClass('hexColor');
-  // // Choose a random image
-  // const randomImage = images[Math.floor(Math.random() * images.length)];
-  // $random.css('background', `url("${randomImage}")`);
+  let $random     = $(randomColour);
 
+  $random.addClass('hexColor');
   $random.css('background', randomHexValue());
 
   setTimeout(() => {
@@ -111,14 +102,14 @@ function randomHexValue() {
   }
   // console.log(`#${hex}`);
   return `#${hex}`
-
 }
 
-function audioFx(){
-
+function resetGame() {
+  console.log('working');
+  var $audio = document.getElementById('audio');
+  $audio.src = 'https://www.soundjay.com/door/doorbell-1.mp3';
+  $audio.play();
+  // clearInterval(liveCount);
+  // gameTimer.clear();
+  // $('.reset')[0].play();
 }
-
-
-
-
-// Testing

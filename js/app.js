@@ -1,5 +1,5 @@
 /*
-WHACK A MOLE STYLE GAME USING WDI STUDENT PORTRAITS - Version 1
+WHACK A MOLE STYLE GAME USING randomly generated #hex values - Version 1
   Using photos of the WDI class as objects to click on a grid.
   The player has a set amount of time to click as many objects as possible
   score is recored for each round
@@ -22,32 +22,40 @@ $(init);
 function init() {
   $('.photo').on('click', chooseSquare);
   $('.start').on('click', start);
+  $('.easy').on('click', setGameLevel);
+  $('.hard').on('click', setGameLevel);
 }
 
 function chooseSquare() {
-  if ($(this).hasClass('person')) {
+  if ($(this).hasClass('hexColor')) {
     const buttonColor = $(this).css('background');
-
     $('body').css('background', buttonColor);
-
     console.log('hit');
     playerScore++;
-    $('.score').html('Player score: ' + playerScore);
+    $('.scoreButton').html(playerScore);
     // Update the dom
   }
 }
 
-function start() {
+function setGameLevel() {
   if ($('.easy').on('click')) {
-    levelSpeed = 1500;
-  } else {
+    $(this).toggleClass('.toggleButton');
+    levelSpeed = 3000;
+    console.log(levelSpeed);
+  } else if ($('.hard').on('click')) {
+    $(this).toggleClass('.toggleButton');
     levelSpeed = 500;
+    console.log(levelSpeed);
   }
-  gameInterval = setInterval(displayRandomPhotos, levelSpeed);
-  gameTimer();
 }
 
-function displayRandomPhotos() {
+function start() {
+  gameInterval = setInterval(displayRandomColors, levelSpeed);
+  gameTimer();
+
+}
+
+function displayRandomColors() {
   // Pick a random index out of the index of .photos
   let randomIndex = Math.floor(Math.random() * $('.photo').length);
   let randomPhoto = $('.photo')[randomIndex];
@@ -58,7 +66,7 @@ function displayRandomPhotos() {
   //   randomPhoto = $('.photo')[randomIndex];
   //   $random     = $(randomPhoto);
   // }
-  $random.addClass('person');
+  $random.addClass('hexColor');
   // // Choose a random image
   // const randomImage = images[Math.floor(Math.random() * images.length)];
   // $random.css('background', `url("${randomImage}")`);
@@ -66,7 +74,7 @@ function displayRandomPhotos() {
   $random.css('background', randomHexValue());
 
   setTimeout(() => {
-    $random.removeClass('person');
+    $random.removeClass('hexColor');
     $random.css('background', '');
   }, 1000);
 }
@@ -79,9 +87,9 @@ function gameTimer() {
     setTime--;
     if(setTime === 0){
       clearInterval(liveCount);
-      clearInterval(gameInterval);
+      // clearInterval(gameInterval);
     }
-    $('.screen').text('Time remaining: ' + setTime);
+    $('.start').text(setTime);
     console.log(setTime);
   }
 }
@@ -91,9 +99,20 @@ function randomHexValue() {
   let hex = '';
 
   for (var i = 0; i < 6; i++) {
-    const randomValue = hexValues[Math.floor(Math.random()*hexValues.length)];
+    const randomValue = hexValues[Math.floor(Math.random() * hexValues.length)];
     hex += randomValue;
+    console.log('hex');
   }
-
+  // console.log(`#${hex}`);
   return `#${hex}`
+
 }
+
+function audioFx(){
+
+}
+
+
+
+
+// Testing

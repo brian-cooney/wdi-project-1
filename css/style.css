@@ -101,10 +101,8 @@ h2 {
   text-align: center;
   vertical-align: middle;
   line-height: 35px;
-  margin-left: 45px;
-  margin-top:  30px;
-
-
+  margin-left: 26px;
+  margin-top: 30px;
 }
 
 .hard {
@@ -126,7 +124,21 @@ h2 {
 }
 
 .toggleButton {
-  colour: black;
-  width: 100px;
-  height: 100px;
+  background: yellow;
+}
+
+.reset {
+  font-family: 'Roboto', sans-serif;
+  width: 35px;
+  height: 35px;
+  background-color: #ff3b3f;
+  border-radius: 100%;
+  float: left;
+  font-size: 12px;
+  text-align: center;
+  /* vertical-align: middle; */
+  line-height: 35px;
+  /* margin-left: 45px; */
+  margin-top: 30px;
+  margin-left: 10px;
 }

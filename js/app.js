@@ -12,14 +12,17 @@ SUDO CODE
   Add countdown timer to game
   keep track of the player score
 */
-
-
 let playerScore = 0;
 let levelSpeed;
+let gameInterval;
 
 $(init);
 
 function init() {
+  levelSpeed = 3000;
+  $('.easy').addClass('toggleButton');
+  $('.hard').removeClass('toggleButton');
+
   $('.photo').on('click', chooseSquare);
   $('.start').on('click', start);
   $('.easy').on('click', setGameLevel);
@@ -38,21 +41,24 @@ function chooseSquare() {
 }
 
 function setGameLevel() {
-  if ($('.easy').on('click')) {
-    $(this).toggleClass('.toggleButton');
+  if ($(this).hasClass('easy')) {
+    $(this).toggleClass('toggleButton');
+    if ($('.hard').hasClass('toggleButton')) {
+      $('.hard').toggleClass('toggleButton');
+    }
     levelSpeed = 3000;
-    console.log(levelSpeed);
-  } else if ($('.hard').on('click')) {
-    $(this).toggleClass('.toggleButton');
+  } else {
+    $(this).toggleClass('toggleButton');
+    if ($('.easy').hasClass('toggleButton')) {
+      $('.easy').toggleClass('toggleButton');
+    }
     levelSpeed = 500;
-    console.log(levelSpeed);
   }
 }
 
 function start() {
   gameInterval = setInterval(displayRandomColors, levelSpeed);
   gameTimer();
-
 }
 
 function displayRandomColors() {
@@ -87,7 +93,7 @@ function gameTimer() {
     setTime--;
     if(setTime === 0){
       clearInterval(liveCount);
-      // clearInterval(gameInterval);
+      clearInterval(gameInterval);
     }
     $('.start').text(setTime);
     console.log(setTime);

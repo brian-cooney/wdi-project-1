@@ -20,8 +20,6 @@ $(init);
 
 function init() {
   levelSpeed = 2000;
-  // $('.easy').addClass('toggleButton');
-  // $('.hard').removeClass('toggleButton');
   $('.hexRandom').on('click', chooseSquare);
   $('.start').one('click', chooseDifficulty);
   $('.easy').on('click', setGameLevel);
@@ -37,25 +35,11 @@ function chooseSquare() {
     console.log('hit');
     playerScore++;
     $('.score span').html(playerScore);
+    soundClip();
   }
 }
 
 function setGameLevel() {
-  // if ($(this).hasClass('easy')) {
-  //   $(this).toggleClass('selected');
-  //   if ($(this).hasClass('selected')) {
-  //     $('.hard').toggleClass('selected');
-  //   }
-  // }
-
-
-
-
-  // if ($(this).hasClass('selected')) {
-  //   levelSpeed = $(this).attr('id');
-  //   console.log(levelSpeed);
-  // }
-
   if ($(this).hasClass('easy')) {
     $(this).toggleClass('selected');
     if ($('.hard').hasClass('selected')) {
@@ -86,10 +70,8 @@ function startGame() {
 }
 
 function displayRandomColors() {
-  // Pick a random index out of the index of .photos
   let randomIndex = Math.floor(Math.random() * $('.hexRandom').length);
   let randomColour = $('.hexRandom')[randomIndex];
-  // // Turn into a jQuery object
   let $random     = $(randomColour);
 
   $random.addClass('hexColor');
@@ -132,14 +114,15 @@ function randomHexValue() {
 function resetGame() {
   $('.start').html('Start');
   $('.start').one('click', chooseDifficulty);
-  // console.log('working');
-  // var $audio = document.getElementById('audio');
-  // $audio.src = 'https://www.soundjay.com/door/doorbell-1.mp3';
-  // $audio.play();
-  // clearInterval(liveCount);
-  // gameTimer.clear();
-  // $('.reset')[0].play();
+  console.log('working');
+
+  clearInterval(liveCount);
+  gameTimer.clear();
+  $('.reset')[0].play();
 }
 
-//reset button should clear functions
-//mobile responsive
+function soundClip() {
+  var $audio = document.getElementById('audio');
+  $audio.src = 'http://home.teleport.com/~tooldiva/public_html/calendar/8k8bit.wav/Bloop.wav';
+  $audio.play();
+}
